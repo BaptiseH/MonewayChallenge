@@ -1,0 +1,24 @@
+.User {
+    text-align: center;
+    height: 100%;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+.header {
+    display: inline-flex;
+    align-items: center;
+}
+
+.titleUser {
+    color: whitesmoke;
+    margin-right: 30px;
+}
+
+.link {
+    color:aqua;
+     text-decoration: none; 
+     background-color: none;
+  }

@@ -1,0 +1,18 @@
+.Home {
+    text-align: center;
+    height: 100%;
+}
+
+.btn {
+    font-weight: bold;
+}
+
+h1 {
+    color: white;
+}
+
+.link {
+    color:aqua;
+     text-decoration: none; 
+     background-color: none;
+  }

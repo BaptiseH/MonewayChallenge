@@ -1,0 +1,31 @@
+.field {
+    border: 2px solid ;
+  border-radius: 40px;
+  border-color: lightskyblue;
+  height: 40px;
+  padding: 0 11px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: darkblue;
+}
+
+.label {
+    margin-top: 15px;
+    margin-bottom: 0px;
+}
+
+.form {
+    width: 400px;
+    background-color: #fff;
+    margin: 20px;
+    padding: 0 20px 20px;
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+    text-align: -webkit-center;
+}
