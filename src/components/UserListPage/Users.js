@@ -7,84 +7,47 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
+import AdressInfo from './components/AdressInfo'
 import '../../static/logo192.png'
 import {
-    Link,
-  } from "react-router-dom";
+  Link,
+} from "react-router-dom";
 
 
 const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-      },
-      paper: {
-        padding: theme.spacing(2),
-        margin: '20px',
-        maxWidth: 500,
-      },
-      image: {
-        width: 128,
-        height: 128,
-      },
-      img: {
-        margin: 'auto',
-        display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
-      },
-    grid: {
-        padding: theme.spacing(2),
-        textAlign: 'center',
-        color: theme.palette.text.secondary,
-      },
-  }));
-
-  class AdressInfo extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: props.id,
-            adress: {
-                number: 0,
-                street: '',
-                postcode: '',
-                city:'',
-            }};
-      }
-
-        adressService(id) {
-            return axios.get('/moneway/adress/' + id)
-        }
-
-    componentDidMount() {
-        this.adressService(this.state.id)
-        .then(res => {
-          this.setState({ adress: res.data })
-          })
-      }
-
-    render() {
-        return (
-            <div>
-                <Typography variant="body2" color="textSecondary">
-                  {this.state.adress.number} {this.state.adress.street}
-                </Typography>
-                <Typography variant="body2" color="textSecondary">
-                  {this.state.adress.postcode} {this.state.adress.city}
-                </Typography>
-            </div>
-        )
-    }
-}
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    padding: theme.spacing(2),
+    margin: '20px',
+    maxWidth: 500,
+  },
+  image: {
+    width: 128,
+    height: 128,
+  },
+  img: {
+    margin: 'auto',
+    display: 'block',
+    maxWidth: '100%',
+    maxHeight: '100%',
+  },
+  grid: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+}));
 
 function ListItemLink(props) {
-    let user = props.children.props.user;
-    const classes = useStyles();
-    return (
-            <Link className="link" to={'/user/' + user.id}>
-                <Paper key={user.id} className={classes.paper}>
-                <Grid container spacing={2}>
-                <Grid item>
+  let user = props.children.props.user;
+  const classes = useStyles();
+  return (
+    <Link className="link" to={'/user/' + user.id}>
+      <Paper key={user.id} className={classes.paper}>
+        <Grid container spacing={2}>
+          <Grid item>
             <ButtonBase className={classes.image}>
               <img className={classes.img} alt="complex" src={require('../../static/logo192.png')} />
             </ButtonBase>
@@ -98,7 +61,7 @@ function ListItemLink(props) {
                 <Typography variant="body2" gutterBottom>
                   {user.email}
                 </Typography>
-                <AdressInfo id={user.adress}/>
+                <AdressInfo id={user.adress} />
               </Grid>
             </Grid>
             <Grid item>
@@ -106,10 +69,10 @@ function ListItemLink(props) {
             </Grid>
           </Grid>
         </Grid>
-                </Paper>
-            </Link>
-    )
-  }
+      </Paper>
+    </Link>
+  )
+}
 
 class Users extends React.Component {
   state = {
@@ -128,15 +91,15 @@ class Users extends React.Component {
 
   render() {
     return (
-        <List className={useStyles.root}>
-            { this.state.persons.map(person =>
-            <div className="userList" key={person.id}>
+      <List className={useStyles.root}>
+        {this.state.persons.map(person =>
+          <div className="userList" key={person.id}>
             <ListItemLink alignItems="flex-start">
-                <ListItemText user={person}></ListItemText>
+              <ListItemText user={person}></ListItemText>
             </ListItemLink>
-            </div>
-            )}
-        </List>
+          </div>
+        )}
+      </List>
     )
   }
 }
