@@ -63,6 +63,9 @@ new Server({
         this.get("/users/", schema => { 
           return schema.db.users
         })
+        this.get("/adress/", schema => { 
+          return schema.db.adress
+        })
         this.get("/user/:id", (schema, request) => { 
             let id = request.params.id
             return schema.db.users.find(id)

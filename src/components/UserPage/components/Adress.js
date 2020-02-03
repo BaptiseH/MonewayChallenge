@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 
-export default class Transaction extends React.Component {
+class Transaction extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,3 +29,5 @@ export default class Transaction extends React.Component {
         )
     }
 }
+
+export default Transaction;

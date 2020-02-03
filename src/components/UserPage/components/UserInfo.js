@@ -1,23 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import Transaction from './Transaction'
-import { useParams } from 'react-router';
 import Profile from './Profile';
-import '../design/User.css'
+import './UserInfo.css'
 import List from '@material-ui/core/List';
-import { makeStyles } from '@material-ui/core/styles';
-import '../static/logo192.png'
+import '../../../static/logo192.png'
 import ListItemText from '@material-ui/core/ListItemText';
 
-
-  const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
-        margin: '5px 0',
-      },
-    }))
-
-class UserInfo extends React.Component {
+export default class UserInfo extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -58,13 +48,3 @@ class UserInfo extends React.Component {
         )
     }
 }
-
-function User() {
-    let {id} = useParams();
-    let classes = useStyles();
-    return (
-        <UserInfo classes={classes} id={id}/>
-    )
-}
-
-export default User;

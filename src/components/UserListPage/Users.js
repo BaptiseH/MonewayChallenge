@@ -7,7 +7,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import '../static/logo192.png'
+import '../../static/logo192.png'
 import {
     Link,
   } from "react-router-dom";
@@ -81,12 +81,12 @@ function ListItemLink(props) {
     let user = props.children.props.user;
     const classes = useStyles();
     return (
-            <Link class="link" to={'/user/' + user.id}>
+            <Link className="link" to={'/user/' + user.id}>
                 <Paper key={user.id} className={classes.paper}>
                 <Grid container spacing={2}>
                 <Grid item>
             <ButtonBase className={classes.image}>
-              <img className={classes.img} alt="complex" src={require('../static/logo192.png')} />
+              <img className={classes.img} alt="complex" src={require('../../static/logo192.png')} />
             </ButtonBase>
           </Grid>
           <Grid item xs={12} sm container>
@@ -111,7 +111,7 @@ function ListItemLink(props) {
     )
   }
 
-export default class Users extends React.Component {
+class Users extends React.Component {
   state = {
     persons: []
   }
@@ -140,3 +140,5 @@ export default class Users extends React.Component {
     )
   }
 }
+
+export default Users;

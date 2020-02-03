@@ -3,12 +3,12 @@ import {
     Link,
   } from "react-router-dom";
   import { Button } from '@material-ui/core';
-  import '../design/Home.css';
+  import './Home.css';
 
 const Home = () => (
-    <div class="Home">
+    <div className="Home">
         <h1>Welcome to the Moneway's challenge !</h1>
-        <Link class="link" to={'/users/'}>
+        <Link className="link" to={'/users/'}>
             <Button variant="contained" color="primary">
                 <span>Let's go !</span>
             </Button>
